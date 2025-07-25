@@ -1,4 +1,5 @@
 import { GET } from "@/app/api/artist";
+import { Artist } from "@/types/artist";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,12 +10,11 @@ export default async function page({
 }) {
   const artistName = (await params).artist;
   const fetchedData = (await GET(artistName)).json();
-  const { artist } = await fetchedData;
+  const { artist }: { artist: Artist } = await fetchedData;
   const { name, url, image, stats, bio, tags, similar } = artist;
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-md space-y-6">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
         <Image
           src={image[0]["#text"]}
