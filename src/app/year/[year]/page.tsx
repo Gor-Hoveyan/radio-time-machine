@@ -19,11 +19,11 @@ export default async function page({
       </h1>
       <div className="w-fit mx-auto">
         {tracks.map((elem, id: number) => (
-          <p key={elem.name}>
+          <p key={elem.name + id}>
             {id + 1}.{" "}
             <Link href={`/artist/${elem.artist.name}`}>{elem.artist.name}</Link>{" "}
             -{" "}
-            <Link href={`/artist/${elem.artist.name}/${elem.name}`}>
+            <Link href={`/artist/${elem.artist.name}/track/${elem.name}`}>
               {elem.name}
             </Link>
           </p>

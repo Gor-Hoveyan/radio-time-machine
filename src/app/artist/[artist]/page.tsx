@@ -74,7 +74,7 @@ export default async function page({
             {similar.artist.slice(0, 5).map((a) => (
               <li key={a.name}>
                 <Link
-                  href={`/artist/${a.name}`}
+                  href={`/${a.name}`}
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >

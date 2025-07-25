@@ -52,13 +52,12 @@ export default async function Page({
             {track.album && (
               <div>
                 <span className="font-medium text-gray-700">Album: </span>
-                <a
-                  href={track.album.url}
+                <Link
+                  href={`/artist/${track.artist.name}/album/${track.album.title}`}
                   className="text-blue-500 hover:underline"
-                  target="_blank"
                 >
                   {track.album.title}
-                </a>
+                </Link>
               </div>
             )}
           </div>
