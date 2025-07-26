@@ -9,10 +9,11 @@ const formatDuration = (duration: string): string => {
   return `${minutes}:${secs.toString().padStart(2, "0")}`;
 };
 
-export default function ChartOfYear(tracks: { tracks: Track[] }) {
+export default function ChartOfYear(props: { track: Track[] }) {
+  const tracks = props.track;
   return (
     <ul className="space-y-4">
-      {tracks.tracks.map((track) => (
+      {tracks.map((track) => (
         <li
           key={`${track["@attr"].rank}-${track.name}`}
           className="flex items-center justify-between bg-white rounded-xl shadow hover:shadow-lg transition p-4"
