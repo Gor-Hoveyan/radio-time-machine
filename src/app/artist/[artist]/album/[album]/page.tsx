@@ -61,15 +61,14 @@ export default async function Page({
               <h2 className="text-lg font-semibold text-gray-800 mb-2">Tags</h2>
               <div className="flex flex-wrap gap-2">
                 {album.tags.tag.map((tag) => (
-                  <a
+                  <Link
+                    href={`/tag/${tag.name}`}
                     key={tag.name}
-                    href={tag.url}
-                    target="_blank"
                     rel="noopener noreferrer"
                     className="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200 transition"
                   >
                     #{tag.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

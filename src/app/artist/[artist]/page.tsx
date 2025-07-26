@@ -56,12 +56,13 @@ export default async function page({
           <h3 className="font-semibold text-lg mb-1">Tags</h3>
           <div className="flex flex-wrap gap-2">
             {tags.tag.map((tag) => (
-              <span
+              <Link
+                href={`/tag/${tag.name}`}
                 key={tag.name}
                 className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full"
               >
                 {tag.name}
-              </span>
+              </Link>
             ))}
           </div>
         </div>

@@ -11,7 +11,7 @@ type Image = {
   size: "small" | "medium" | "large" | "extralarge";
 };
 
-type Track = {
+export type Track = {
   name: string;
   duration: string;
   playcount: string;
@@ -21,6 +21,5 @@ type Track = {
   streamable: Streamable;
   artist: Artist;
   image: Image[];
+  "@attr": { rank: number };
 };
-
-export type TrackList = Track[];
