@@ -1,5 +1,5 @@
 import { GET } from "@/app/api/top";
-import ChartOfYear from "@/components/ChartOfYear";
+import ChartOfYear from "@/pages/ChartOfYear";
 import { Track } from "@/types/trackList";
 
 export default async function page({

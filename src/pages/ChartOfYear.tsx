@@ -32,14 +32,13 @@ export default function ChartOfYear(props: { track: Track[] }) {
               </Link>
               <div className="text-sm text-gray-600">
                 by{" "}
-                <a
-                  href={track.artist.url}
-                  target="_blank"
+                <Link
+                  href={`/artist/${track.artist.name}`}
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
                   {track.artist.name}
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import ListOfYears from "@/components/ListOfYears";
+import ListOfYears from "@/pages/ListOfYears";
 
 export default function Home() {
   return (

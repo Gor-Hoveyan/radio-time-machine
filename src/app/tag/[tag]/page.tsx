@@ -1,5 +1,5 @@
 import { GET } from "@/app/api/tag";
-import TagPage from "@/components/TagPage";
+import TagPage from "@/pages/TagPage";
 
 export default async function page({
   params,
