@@ -1,0 +1,21 @@
+import React from "react";
+
+export default function HomeMusicIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      className="lucide lucide-music2-icon lucide-music-2"
+    >
+      <circle cx="8" cy="18" r="4" />
+      <path d="M12 18V2l7 4" />
+    </svg>
+  );
+}
