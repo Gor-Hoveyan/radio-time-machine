@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Page() {
+function ErrorContent() {
   const searchParams = useSearchParams();
   const message =
     (searchParams && searchParams.get("message")) || "Something went wrong.";
@@ -18,5 +19,13 @@ export default function Page() {
         Go Home
       </Link>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ErrorContent />
+    </Suspense>
   );
 }

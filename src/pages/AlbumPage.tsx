@@ -12,8 +12,9 @@ export default function AlbumPage(props: Album) {
         <div className="md:w-1/3 bg-gray-100 flex items-center justify-center p-4">
           <Image
             src={
-              album.image.find((img) => img.size === "extralarge")?.["#text"] ||
-              "/placeholder.png"
+              album?.image?.find((img) => img.size === "extralarge")?.[
+                "#text"
+              ] || "/placeholder.png"
             }
             alt={album.name}
             width={300}

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 declare global {
   interface Window {
-    YT: unknown;
+    YT: typeof YT;
     onYouTubeIframeAPIReady: () => void;
   }
 }

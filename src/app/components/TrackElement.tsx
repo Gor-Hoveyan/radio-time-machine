@@ -2,10 +2,15 @@ import { TrackListElement } from "@/types/trackList";
 import { formatDuration } from "@/utils/formatDuration";
 import Link from "next/link";
 
-export default function TrackElement(props: {
-  track: TrackListElement;
-  id: number;
-}) {
+type trackItem = {
+  name: string;
+  artist: {
+    name: string;
+  };
+  duration: string;
+};
+
+export default function TrackElement(props: { track: trackItem; id: number }) {
   const { track, id } = props;
   return (
     <li className="flex items-center justify-between bg-white rounded-2xl shadow-sm hover:shadow-md transition p-4 border border-gray-100">

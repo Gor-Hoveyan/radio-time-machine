@@ -20,7 +20,7 @@ type Artist = {
 
 type Track = {
   streamable: Streamable;
-  duration: number;
+  duration: string;
   url: string;
   name: string;
   "@attr": Attr;

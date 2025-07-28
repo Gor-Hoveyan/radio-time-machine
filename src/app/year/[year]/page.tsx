@@ -10,7 +10,7 @@ export default async function page({
   return (
     <div className="max-w-4xl mx-auto px-4 py-6">
       <h2 className="text-3xl font-bold mb-6">🎵 Top Tracks of {year}</h2>
-      <ChartOfYear year={year} />
+      <ChartOfYear year={Number(year)} />
     </div>
   );
 }
