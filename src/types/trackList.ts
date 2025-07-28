@@ -11,7 +11,7 @@ type Image = {
   size: "small" | "medium" | "large" | "extralarge";
 };
 
-export type Track = {
+export type TrackListElement = {
   name: string;
   duration: string;
   playcount: string;

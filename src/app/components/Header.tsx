@@ -12,9 +12,9 @@ export default function Header() {
         </div>
 
         <nav className="space-x-6 hidden sm:flex text-sm text-gray-600">
-          <a href="#" className="hover:text-blue-500 font-medium">
+          <Link href="/about" className="hover:text-blue-500 font-medium">
             About
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

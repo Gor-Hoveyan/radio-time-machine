@@ -1,4 +1,5 @@
 import { GET } from "@/app/api/video";
+import TagElement from "@/app/components/TagElement";
 import YouTubePlayer from "@/app/components/YoutubePlayer";
 import YouTubeScriptLoader from "@/app/components/YoutubeScriptLoader";
 import { Track } from "@/types/track";
@@ -80,14 +81,8 @@ export default async function TrackPage(track: Track) {
 
             {track.toptags?.tag?.length > 0 && (
               <div className="mt-2 flex flex-wrap gap-2">
-                {track.toptags.tag.map((tag, i) => (
-                  <Link
-                    key={i}
-                    href={`/tag/${tag.name}`}
-                    className="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-200 transition"
-                  >
-                    #{tag.name}
-                  </Link>
+                {track.toptags.tag.map((tag) => (
+                  <TagElement key={tag.name} name={tag.name} />
                 ))}
               </div>
             )}
