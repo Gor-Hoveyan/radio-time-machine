@@ -22,7 +22,7 @@ export async function GET(name: string) {
 
     const data = await res.json();
     return data.items?.[0]?.id?.videoId ?? null;
-  } catch (e: any) {
-    throw new Error(e.message || "Unexpected error from YoutTube API");
+  } catch (e) {
+    throw new Error("Unexpected error from YoutTube API");
   }
 }

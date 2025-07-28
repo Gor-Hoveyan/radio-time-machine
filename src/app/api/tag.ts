@@ -15,7 +15,7 @@ export async function GET(tag: string) {
     const data = await res.json();
 
     return Response.json(data);
-  } catch (e: any) {
-    throw new Error(e.message || "Unexpected error from Last.fm API");
+  } catch (e) {
+    throw new Error("Unexpected error from Last.fm API");
   }
 }

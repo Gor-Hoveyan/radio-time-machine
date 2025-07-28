@@ -13,7 +13,7 @@ export async function GET(artist: string, name: string) {
 
     const data = await res.json();
     return Response.json(data);
-  } catch (e: any) {
-    throw new Error(e.message || "Unexpected error from Last.fm API");
+  } catch {
+    throw new Error("Unexpected error from Last.fm API");
   }
 }

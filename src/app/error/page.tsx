@@ -1,9 +1,8 @@
 "use client";
-
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-export default function page() {
+export default function Page() {
   const searchParams = useSearchParams();
   const message =
     (searchParams && searchParams.get("message")) || "Something went wrong.";
