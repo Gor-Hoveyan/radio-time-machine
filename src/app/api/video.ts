@@ -17,14 +17,12 @@ export async function GET(name: string) {
     );
 
     if (!res.ok) {
-      const errorData = await res.json();
-      console.error("YouTube API error:", res.status, errorData);
-      return null;
+      throw new Error("Unexpected error from YoutTube API");
     }
 
     const data = await res.json();
     return data.items?.[0]?.id?.videoId ?? null;
-  } catch (error) {
-    return null;
+  } catch (e: any) {
+    throw new Error(e.message || "Unexpected error from YoutTube API");
   }
 }

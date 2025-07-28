@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
@@ -9,12 +10,9 @@ export default function Footer() {
         </p>
 
         <div className="mt-2 sm:mt-0 space-x-4">
-          <a href="#" className="hover:text-blue-500 transition">
+          <Link href="/about" className="hover:text-blue-500 transition">
             About
-          </a>
-          <a href="#" className="hover:text-blue-500 transition">
-            Privacy
-          </a>
+          </Link>
           <a href="#" className="hover:text-blue-500 transition">
             Contact
           </a>
