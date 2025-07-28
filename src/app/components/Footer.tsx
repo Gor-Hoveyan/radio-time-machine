@@ -13,9 +13,6 @@ export default function Footer() {
           <Link href="/about" className="hover:text-blue-500 transition">
             About
           </Link>
-          <a href="#" className="hover:text-blue-500 transition">
-            Contact
-          </a>
         </div>
       </div>
     </footer>
