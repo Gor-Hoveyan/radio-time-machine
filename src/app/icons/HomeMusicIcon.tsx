@@ -9,9 +9,9 @@ export default function HomeMusicIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="lucide lucide-music2-icon lucide-music-2"
     >
       <circle cx="8" cy="18" r="4" />

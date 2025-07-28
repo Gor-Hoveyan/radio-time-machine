@@ -6,7 +6,7 @@ export default function ArtistPage(props: Artist) {
   const { name, url, image, stats, bio, tags, similar } = props;
   console.log(props);
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-md space-y-6">
+    <div className="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-md space-y-6  mt-8">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
         <Image
           src={image[0]["#text"]}

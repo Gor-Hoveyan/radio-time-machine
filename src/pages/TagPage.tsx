@@ -2,7 +2,7 @@ import { Tag } from "@/types/tag";
 
 export default function TagPage(tag: Tag) {
   return (
-    <div className="max-w-3xl mx-auto mt-10 bg-white shadow-md rounded-2xl p-6 space-y-6">
+    <div className="max-w-3xl mx-auto mt-8 bg-white shadow-md rounded-2xl p-6 space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-gray-900 capitalize">
           {tag.name}
