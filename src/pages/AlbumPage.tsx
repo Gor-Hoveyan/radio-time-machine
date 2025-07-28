@@ -1,4 +1,5 @@
 import { Album } from "@/types/album";
+import { formatDuration } from "@/utils/formatDuration";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -48,7 +49,7 @@ export default function AlbumPage(props: Album) {
             </p>
           </div>
 
-          {album.tags.tag.length > 0 && (
+          {album.tags && album.tags.tag.length > 0 && (
             <div>
               <h2 className="text-lg font-semibold text-gray-800 mb-2">Tags</h2>
               <div className="flex flex-wrap gap-2">
@@ -68,27 +69,42 @@ export default function AlbumPage(props: Album) {
         </div>
       </div>
 
-      {album.tracks.track.length > 0 && (
+      {album.tracks && album.tracks.track.length > 0 && (
         <div className="border-t px-6 py-5">
           <h2 className="text-lg font-semibold text-gray-800 mb-3">Tracks</h2>
           <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700">
             {album.tracks.track.map((track) => (
               <li
-                key={track.name + track.artist.name}
-                className="flex justify-between items-center"
+                key={`${track["@attr"].rank}-${track.name}`}
+                className="flex items-center justify-between bg-white rounded-2xl shadow-sm hover:shadow-md transition p-4 border border-gray-100"
               >
-                <span>
-                  <span className="font-medium">{track.name}</span>{" "}
-                  <span className="text-gray-500">by {track.artist.name}</span>
-                </span>
-                <a
-                  href={track.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline text-xs"
-                >
-                  Listen ↗
-                </a>
+                <div className="flex items-center space-x-4">
+                  <div className="text-xl font-bold text-gray-400 w-6 text-right">
+                    {track["@attr"].rank}
+                  </div>
+
+                  <div>
+                    <Link
+                      href={`/artist/${track.artist.name}/track/${track.name}`}
+                      className="text-base font-semibold text-gray-800 hover:text-blue-600 transition"
+                    >
+                      {track.name}
+                    </Link>
+                    <div className="text-sm text-gray-500">
+                      by{" "}
+                      <Link
+                        href={`/artist/${track.artist.name}`}
+                        className="hover:underline text-gray-600"
+                      >
+                        {track.artist.name}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-xs text-white bg-gray-800 px-2 py-1 rounded-md font-mono min-w-[48px] text-center">
+                  {formatDuration(String(track.duration))}
+                </div>
               </li>
             ))}
           </ol>

@@ -10,6 +10,5 @@ export default async function page({
   const artistName = (await params).artist;
   const fetchedData = (await GET(artistName)).json();
   const { artist }: { artist: Artist } = await fetchedData;
-
   return <ArtistPage {...artist} />;
 }
