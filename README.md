@@ -77,9 +77,11 @@ src/
 │ ├── year/[year]/page.tsx # Tracks by year
 │ ├── artist/[name]/page.tsx # Artist info
 │ ├── album/[album]/page.tsx # Album info
-│ ├── api/chart/route.ts # Server API proxy
+│ ├── api/ # Server API proxy
+│ ├── pages/ # Page UI
 │ ├── components/ # UI components
 │ ├── icons/ # Custom SVG icons
+│ ├── types/ # Typescript types
 │ ├── utils/ # Utility functions
 │ ├── error.tsx # Global error fallback
 │ ├── not-found.tsx # 404 handler
